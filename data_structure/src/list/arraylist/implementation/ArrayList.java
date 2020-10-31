@@ -4,7 +4,7 @@ public class ArrayList {
 	private int size = 0;
 	private Object[] elementData = new Object[100];
 	
-	public boolean addLast(Object element) {  // µÚ¿¡ µ¥ÀÌÅÍ Ãß°¡ÇÏ±â
+	public boolean addLast(Object element) {  // ï¿½Ú¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½ï¿½Ï±ï¿½
 		elementData[size] = element;
 		size++;
 		return true;
@@ -22,7 +22,7 @@ public class ArrayList {
 		size++;
 		return true;
 	} 
-	public String toString() {  // °´Ã¼¸¦ º¸±â ÁÁ°Ô Ãâ·Â
+	public String toString() {  // ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 		String str = "[";
 		for (int i = 0; i < size; i++)
 		{
@@ -65,7 +65,7 @@ public class ArrayList {
 				return i;
 			}
 		}
-		return -1;  // -1·Î ¾ø´Ù´Â °É Ç¥½Ã
+		return -1;  // -1ï¿½ï¿½ ï¿½ï¿½ï¿½Ù´ï¿½ ï¿½ï¿½ Ç¥ï¿½ï¿½
 	}
 	
 	public ListIterator listIterator( ) {
@@ -74,14 +74,38 @@ public class ArrayList {
 	
 	class ListIterator {
 		private int nextIndex = 0;
+		
+		public boolean hasNext( ) {
+			return nextIndex < size();
+		}
+		
 		public Object next( ) {
 //			Object returnData = elementData[nextIndex];
 //			nextIndex++;
 //			return returnData;
-//		}
-			
+				
 		return elementData[nextIndex++];
 	}
-	
+		
+		public Object previous() {
+			return elementData[--nextIndex];
+		}
+
+		public boolean hasPrevious() {
+			return nextIndex > 0;
+		}
+
+		public void add(Object element) {
+			ArrayList.this.add(nextIndex++, element);
+		}
+		
+		public void remove(Object element) {
+			ArrayList.this.remove(nextIndex-1);	
+			nextIndex--;
+		}
+
 }
+}
+
+	
 

@@ -18,16 +18,34 @@ public class Main {
 		
 		System.out.println(numbers.indexOf(40));
 		
-		// ¹Ýº¹ÀûÀÎ ÀÛ¾÷À» À§ÇÑ °´Ã¼ iterator »ç¿ë
+		// ï¿½Ýºï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Û¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ iterator ï¿½ï¿½ï¿½
 //		for (int i=0; i<numbers.size(); i++) {
 //			System.out.println(numbers.get(i));
 //		}
 		
 		ArrayList.ListIterator li = numbers.listIterator();
-		System.out.println(li.next());
-		System.out.println(li.next());
-		System.out.println(li.next());
-		System.out.println(li.next());
+		
+		while(li.hasNext()) {
+			int number = (int)li.next();
+			if(number == 30) {
+				li.remove(30);
+			}	
+		}
+		System.out.println( numbers.indexOf(40));
+		System.out.println( numbers);
+		
+		
+		
+		System.out.println();
+		
+		while(li.hasPrevious()) {
+			System.out.println( li.previous());
+		}
+		
+		
+		
+		
+		
 		
 	}
 }

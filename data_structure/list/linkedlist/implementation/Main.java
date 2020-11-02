@@ -6,6 +6,7 @@ public class Main {
 		// TODO Auto-generated method stub
 		
 		LinkedList numbers = new LinkedList();
+		LinkedList numbers1 = new LinkedList();
 	}
 
 }
